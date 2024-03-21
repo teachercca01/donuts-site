@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+:root {
+ --main-font: Arial, sans-serif;
+ --main-bg-color: #eaf7f6;
+ --main-layout-width: 100%;
+ --border-color: #7fd8cc;
+ --main-padding: 1.25rem;
+ --sub-padding: 0.75rem;
+ --text-align-center: center;
+ --light-bg-color: #fff;
+ --dark-bg-color: #7fd8cc;
+ --pale-bg-color: #F9DB57;
+ --mono-bg-color: #8E8E8E;
+ --text-color: white;
+ --title-color: #3db0a1;
+ --input-border-radius: 0.25rem;
+ --box-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+*{
+ box-sizing: border-box;
+ padding: 0;
+ margin: 0; 
+}
+
+/* Foundation */
+body {
+ background-color: var(--main-bg-color);
+ font-family: var(--main-font);
+}
+
+/* Layout */
+table {
+ width: var(--main-layout-width);
+ margin: auto;
+ table-layout: fixed;
+ border-collapse: collapse;
+}
+
+/* Object */
+h1 {
+ margin: 0.67em;
+ text-align: var(--text-align-center);
+}
+
+.calendar{
+ position: relative;
+ max-width: 1200px;
+}
+/* Component */
+.calendar__title {
+ color: var(--title-color);
+}
+
+.calendar {
+ width: var(--main-layout-width);
+ margin: auto;
+}
+
+.calendar__day,
+.calendar__date,
+.calendar__empty-date {
+    padding: var(--main-padding);
+ border: 1px solid var(--border-color);
+ background: var(--light-bg-color);
+ text-align: var(--text-align-center);
+}
+
+.calendar__day {
+ background-color: var(--dark-bg-color);
+ color: var(--text-color);
+}
+
+.calendar__date:hover{
+ cursor: pointer;
+ background: var(--main-bg-color);
+}
+/*icon*/
+.calendar__edit-icon {
+ position: absolute;
+ top: -50px;
+ right: 10px;
+}
+
+.calendar__edit-icon i {
+ font-size: 24px;
+ color: #000;
+ /* 他のスタイルを追加できます */
+}
+
+/* edit.php */
+
+.schedule-container{
+ display: flex;
+ align-items: center;
+ min-height: 100vh;
+}
+.schedule {
+ width: 100%;
+ max-width: 24rem;
+ min-height: 440px;
+ padding: var(--sub-padding);
+ margin: 0 auto;
+ background: var(--light-bg-color);
+ border-radius: var(--input-border-radius);
+ box-shadow: 0 2px 4px var(--box-shadow-color);
+}
+
+.schedule__list {
+ margin-bottom: var(--sub-padding);
+}
+
+.schedule__item {
+ margin-top: var(--sub-padding);
+ font-weight: bold;
+}
+
+.schedule__item {
+ margin-bottom: var(--sub-padding);
+}
+
+.schedule__label {
+ margin-bottom: 0.25rem;
+}
+
+.schedule__input,
+.schedule__select,
+.schedule__textarea {
+ width: 100%;
+ padding: var(--sub-padding);
+ border: 1px solid var(--title-color);
+ border-radius: var(--input-border-radius);
+ font-size: 1rem;
+}
+
+.schedule__textarea {
+ height: 7.5rem;
+}
+
+.schedule__submit{
+ overflow: hidden;
+}
+
+.schedule__detail{
+ display: inline-block;
+ width: 80%;
+ margin: 0 auto;
+ text-align: left;
+}
+.button {
+ float: right;
+ padding: var(--sub-padding);
+ background: var(--title-color);
+ border: none;
+ border-radius: var(--input-border-radius);
+ color: var(--text-color);
+ transition: background-color 0.3s ease;
+ cursor: pointer;
+}
+
+.button:hover {
+ background-color: var(--dark-bg-color);
+}
+
+.schedule__submit button.button{
+ float:left;
+ background: var(--mono-bg-color);
+}
+
+/* index.php */
+.calendar__date{
+ position: relative;
+ height: 72px;
+ box-sizing: border-box;
+}
+.calendar__date span:not(.calendar__date span:first-child){
+ display: inline-block;
+ font-size: 0.8rem;
+ background: var(--pale-bg-color);
+ width: 8rem;
+ padding: 0.25em 0.5rem;
+ border-radius: 0.5rem;
+ box-sizing: border-box;
+}
+.calendar__date span:first-child{
+ position: absolute;
+ left: 0.3rem;
+ top: 0.3rem;
+ text-align: left;
+}
+.msg{
+ position: absolute;
+ left: 0;
+ top: 4px;
+ padding: var(--sub-padding);
+ background: #fff;
+ border-radius: 0.5rem;
+}
