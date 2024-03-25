@@ -8,7 +8,7 @@ $sql = $pdo->prepare('select * from product where id=?');
 $sql->execute([$_REQUEST['id']]);
 
 foreach ($sql as $row) {
-    echo '<p><img alt="image" src="image/', $row['id'], '.jpg"></p>';
+    echo '<p><img alt="image" src="common/images/', $row['id'], '.jpg"></p>';
     echo '<form action="cart-input.php" method="post">';
     echo '<p>', $row['name'], '</p>';
     echo '<p>', $row['description'], '</p>';

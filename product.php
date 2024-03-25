@@ -8,11 +8,16 @@ $sql = $pdo->query('select * from product');
 
 foreach ($sql as $row) {
     $id = $row['id'];
+    $category = $row['category'];
     echo '<form action="cart-input.php" method="post">';
     echo '<table>';
     echo '<tr>';
     echo '<td>';
-    echo '<a href="detail.php?id=', $id, '">', $row['name'], '</a>';
+    if ($category == 1) {
+        echo '<a href="detail-1.php?id=', $id, '">', $row['name'], '</a>';
+    } else {
+        echo '<a href="detail-2.php?id=', $id, '">', $row['name'], '</a>';
+    }
     echo '</td>';
     echo '<td>', $row['price'], '</td>';
     echo '<td><input type="number" name="count"> 個</td>';
