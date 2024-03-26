@@ -1,8 +1,10 @@
-<?php require 'includes/header.php'; ?>
+<?php
+$pageName = 'カート-追加ページ';
+require 'includes/header.php'; ?>
 
 <?php
-if(isset($_SESSION['customer_donuts'])) {
-    echo '<p class="login_user">ようこそ　',$_SESSION['customer_donuts']['name'] . '様</p>';
+if (isset($_SESSION['customer_donuts'])) {
+    echo '<p class="login_user">ようこそ　', $_SESSION['customer_donuts']['name'] . '様</p>';
 } else {
     echo '<p class="login_user">ようこそ　ゲスト様</p>';
 }
@@ -10,24 +12,24 @@ if(isset($_SESSION['customer_donuts'])) {
 
 <?php
 
-if(!empty($_REQUEST['count'])) {
-    if(isset($_SESSION['customer_donuts'])) {
+if (!empty($_REQUEST['count'])) {
+    if (isset($_SESSION['customer_donuts'])) {
 
-        $id=$_REQUEST['id'];
+        $id = $_REQUEST['id'];
 
         if (!isset($_SESSION['product_donuts'])) {
-            $_SESSION['product_donuts']=[];
+            $_SESSION['product_donuts'] = [];
         }
 
-        $count=0;
+        $count = 0;
         if (isset($_SESSION['product_donuts'][$id])) {
-            $count=$_SESSION['product_donuts'][$id]['count'];
+            $count = $_SESSION['product_donuts'][$id]['count'];
         }
 
-        $_SESSION['product_donuts'][$id]=[
-            'name'=>$_REQUEST['name'],
-            'price'=>$_REQUEST['price'],
-            'count'=>$count+$_REQUEST['count']
+        $_SESSION['product_donuts'][$id] = [
+            'name' => $_REQUEST['name'],
+            'price' => $_REQUEST['price'],
+            'count' => $count + $_REQUEST['count']
         ];
         require 'cart.php';
     } else {

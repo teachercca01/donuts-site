@@ -1,8 +1,10 @@
-<?php require 'includes/header.php'; ?>
+<?php
+$pageName = '会員登録-入力確認ページ ';
+require 'includes/header.php'; ?>
 
 <?php
-if(isset($_SESSION['customer_donuts'])) {
-    echo '<p class="login_user">ようこそ　',$_SESSION['customer_donuts']['name'] . '様</p>';
+if (isset($_SESSION['customer_donuts'])) {
+    echo '<p class="login_user">ようこそ　', $_SESSION['customer_donuts']['name'] . '様</p>';
 } else {
     echo '<p class="login_user">ようこそ　ゲスト様</p>';
 }
@@ -10,23 +12,23 @@ if(isset($_SESSION['customer_donuts'])) {
 
 <?php
 
-if(isset($_REQUEST['name'])) {
-    if(empty($_REQUEST['name'])) {
+if (isset($_REQUEST['name'])) {
+    if (empty($_REQUEST['name'])) {
         echo '<p">名前が入力されていません</p>';
         exit;
-    } elseif(empty($_REQUEST['kana'])) {
+    } elseif (empty($_REQUEST['kana'])) {
         echo '<p">フリガナが入力されていません</p>';
         exit;
-    } elseif(empty($_REQUEST['post_code']) || !preg_match('/^[0-9]{7}$/', $_REQUEST['post_code'])) {
+    } elseif (empty($_REQUEST['post_code']) || !preg_match('/^[0-9]{7}$/', $_REQUEST['post_code'])) {
         echo '<p>郵便番号が違います。</p>';
         exit;
-    } elseif(empty($_REQUEST['address'])) {
+    } elseif (empty($_REQUEST['address'])) {
         echo '<p">住所が入力されていません</p>';
         exit;
-    } elseif(empty($_REQUEST['mail']) || !preg_match('/@/', $_REQUEST['mail'])) {
+    } elseif (empty($_REQUEST['mail']) || !preg_match('/@/', $_REQUEST['mail'])) {
         echo '<p>メールアドレスが違います。</p>';
         exit;
-    } elseif(!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/', $_REQUEST['password'])) {
+    } elseif (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/', $_REQUEST['password'])) {
         echo '<p>パスワードが不適切です。</p>';
         exit;
     } else {
@@ -69,7 +71,6 @@ if(isset($_REQUEST['name'])) {
         $_SESSION['password'] = $_REQUEST['password'];
 
         echo '</form>';
-
     }
 } else {
     echo '<p>入力データがありません。</p>';

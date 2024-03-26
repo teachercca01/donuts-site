@@ -1,4 +1,6 @@
-<?php require 'includes/header.php'; ?>
+<?php
+$pageName = '商品詳細ページ';
+require 'includes/header.php'; ?>
 
 <?php
 

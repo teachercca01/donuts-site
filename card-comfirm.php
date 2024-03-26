@@ -1,5 +1,5 @@
 <?php
-$pageName = 'クレジットカード情報-完了ページ';
+$pageName = 'クレジットカード情報-入力確認ページ';
 require 'includes/header.php'; ?>
 
 <?php

@@ -1,8 +1,10 @@
-<?php require 'includes/header.php'; ?>
+<?php
+$pageName = '会員登録-入力ページ ';
+require 'includes/header.php'; ?>
 
 <?php
-if(isset($_SESSION['customer_donuts']['name'])) {
-    echo '<p class="login_user">ようこそ　',$_SESSION['customer_donuts']['name'] . '様</p>';
+if (isset($_SESSION['customer_donuts']['name'])) {
+    echo '<p class="login_user">ようこそ　', $_SESSION['customer_donuts']['name'] . '様</p>';
 } else {
     echo '<p class="login_user">ようこそ　ゲスト様</p>';
 }
@@ -10,7 +12,7 @@ if(isset($_SESSION['customer_donuts']['name'])) {
 
 <?php
 
-if(isset($_SESSION['customer_donuts'])) {
+if (isset($_SESSION['customer_donuts'])) {
     echo '<p>すでに会員登録済みです。</p>';
     exit;
 } else {

@@ -1,4 +1,6 @@
-<?php require 'includes/header.php'; ?>
+<?php
+$pageName = 'カート-削除ページ';
+require 'includes/header.php'; ?>
 <?php
 unset($_SESSION['product_donuts'][$_REQUEST['id']]);
 echo '<p>カートから商品を削除しました。</p>';
