@@ -1,4 +1,6 @@
-<?php require 'includes/header.php'; ?>
+<?php
+$pageName = '購入-完了ページ ';
+require 'includes/header.php'; ?>
 
 <?php
 

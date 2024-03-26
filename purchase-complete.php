@@ -1,4 +1,6 @@
-<?php require 'includes/header.php'; ?>
+<?php
+$pageName = '購入-確認ページ ';
+require 'includes/header.php'; ?>
 <?php require 'includes/database.php'; ?>
 
 <?php

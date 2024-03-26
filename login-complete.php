@@ -1,4 +1,6 @@
-<?php require 'includes/header.php'; ?>
+<?php
+$pageName = 'ログイン-完了ページ';
+require 'includes/header.php'; ?>
 
 <?php
 unset($_SESSION['customer_donuts']);

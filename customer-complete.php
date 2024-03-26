@@ -1,4 +1,6 @@
-<?php require 'includes/header.php'; ?>
+<?php
+$pageName = '会員登録-完了ページ  ';
+require 'includes/header.php'; ?>
 <?php require 'includes/database.php'; ?>
 
 

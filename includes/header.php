@@ -4,7 +4,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>donuts-site</title>
+    <title> <?php
+            $siteName = 'c.c.donuts';
+            echo $siteName . " | " . $pageName; ?></title>
     <link rel="stylesheet" href="../common/css/reset.css">
     <link rel="stylesheet" href="../common/css/base.css">
     <link rel="stylesheet" href="../common/css/home.css">

@@ -1,4 +1,6 @@
-<?php require 'includes/header.php'; ?>
+<?php
+$pageName = 'ログアウト-完了ページ';
+require 'includes/header.php'; ?>
 <?php
 
 if (isset($_SESSION['customer_donuts'])) {
@@ -7,8 +9,8 @@ if (isset($_SESSION['customer_donuts'])) {
 
 ?> 
 <?php
-if(isset($_SESSION['customer_donuts'])) {
-    echo '<p class="login_user">ようこそ　',$_SESSION['customer_donuts']['name'] . '様</p>';
+if (isset($_SESSION['customer_donuts'])) {
+    echo '<p class="login_user">ようこそ　', $_SESSION['customer_donuts']['name'] . '様</p>';
 } else {
     echo '<p class="login_user">ようこそ　ゲスト様</p>';
 }
